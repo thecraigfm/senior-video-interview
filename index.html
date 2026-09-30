@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#173f5f" />
+    <title>Video Interview Practice</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <p class="eyebrow">MDPR 4130 · Senior Seminar</p>
+        <h1>Video Interview</h1>
+        <p class="lede">Record, review, and save your responses to ten common interview questions.</p>
+      </header>
+
+      <section class="notice" aria-label="Before you begin">
+        <h2>Before you begin</h2>
+        <p>Your recordings stay on this device until you download them. Choose a quiet, professional setting, test your camera and microphone, and plan to upload the final ZIP file to Canvas. Career Services also provides a quiet, professional recording room with the needed technology.</p>
+        <p><strong>Important:</strong> Keep this browser tab open until you have downloaded your file. Refreshing or closing the tab deletes unsaved recordings.</p>
+      </section>
+
+      <section class="progress-area" aria-label="Interview progress">
+        <div class="progress-label"><span id="progressText">Question 1 of 10</span><span id="savedCount">0 saved</span></div>
+        <div class="progress-track" aria-hidden="true"><div id="progressBar" class="progress-bar"></div></div>
+      </section>
+
+      <section id="interviewCard" class="interview-card">
+        <p id="questionNumber" class="question-number">Question 1</p>
+        <h2 id="questionText">Tell me about yourself.</h2>
+        <p class="time-note">You may record for up to 5 minutes. You can stop sooner.</p>
+
+        <div class="video-grid">
+          <section class="video-panel">
+            <h3>Camera preview</h3>
+            <video id="liveVideo" autoplay muted playsinline></video>
+            <p id="cameraMessage" class="video-status">Select “Enable camera” to begin.</p>
+          </section>
+          <section class="video-panel">
+            <h3>Your answer</h3>
+            <video id="playbackVideo" controls playsinline></video>
+            <p id="recordingMessage" class="video-status">Your recorded answer will appear here.</p>
+          </section>
+        </div>
+
+        <div class="timer" aria-live="polite"><span id="timer">0:00</span><span> / 5:00</span></div>
+        <p id="statusMessage" class="status" aria-live="polite">Ready when you are.</p>
+
+        <div class="controls">
+          <button id="enableButton" class="button primary">Enable camera</button>
+          <button id="startButton" class="button primary" disabled>Start recording</button>
+          <button id="stopButton" class="button danger" disabled>Stop recording</button>
+          <button id="rerecordButton" class="button secondary" disabled>Re-record</button>
+          <button id="keepButton" class="button primary" disabled>Keep this answer</button>
+        </div>
+      </section>
+
+      <section id="finishCard" class="finish-card" hidden>
+        <p class="eyebrow">All responses saved</p>
+        <h2>Your interview is ready to download.</h2>
+        <p>Download one ZIP file containing all ten videos, then upload that ZIP file to Canvas. The file names include the question numbers so your responses stay in order.</p>
+        <button id="downloadButton" class="button primary">Download interview ZIP</button>
+        <button id="reviewButton" class="button secondary">Review an answer</button>
+        <p id="downloadStatus" class="status" aria-live="polite"></p>
+      </section>
+
+      <footer>
+        <p>This practice tool does not upload, store, or share your videos.</p>
+      </footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
